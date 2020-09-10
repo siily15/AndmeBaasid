@@ -1,6 +1,9 @@
 <?php
-
-require_once '../config.php';
+$host = 'd83304.mysql.zonevs.eu';
+$db   = 'd83304_books';
+$user  = 'd83304sa325722';
+$pass = '';
+$charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
@@ -18,22 +21,25 @@ $stmt = $pdo->prepare('SELECT * FROM books');
 $stmt->execute();
 $aBooks = $stmt->fetchAll();
 
-var_dump($aBooks);
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <?php
-    foreach ($aBooks as $book) {
-        echo '<li>' . $book ['title'] </li> ;
-    }
-    ?>
+        <?php
+            foreach ($aBooks as $book) {
+            echo '<li>' . $book['title'] ;
+         }
+        ?>
+    </li>
 </body>
+
 </html>
