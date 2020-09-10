@@ -2,7 +2,7 @@
 $host = 'd83304.mysql.zonevs.eu';
 $db   = 'd83304_books';
 $user  = 'd83304sa325722';
-$pass = '';
+$pass = 'Siilipapa16';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -36,10 +36,10 @@ $aBooks = $stmt->fetchAll();
 <body>
         <?php
             foreach ($aBooks as $book) {
-            echo '<li>' . $book['title'] ;
+            echo '<li>' . '<a href = "book.php?id= ">' . $book['title'] . '</a>';
          }
         ?>
-    </li>
+        '</li>'
 </body>
 
 </html>
